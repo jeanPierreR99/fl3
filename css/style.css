@@ -407,8 +407,5 @@ height: 300px;
     transform: translateX(-50%) !important;
     height: 100% !important;
   }
-  body{
-    height: 100vmax !important;
-    background: red;
-  }
+
 }
