@@ -254,7 +254,7 @@ z-index: 1;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 15px;
-  font-size: 13px;
+  font-size: 13px;hidden
   position: relative;
   margin-bottom: 30px;
 }
@@ -359,7 +359,7 @@ height: 300px;
   } 
   .text{
     width: 100%;
-    top:30px;
+    top:90px;
     left: 50%;
     transform: translate(-50%);
   } 
@@ -396,5 +396,8 @@ height: 300px;
     left: 50%;
     transform: translateX(-50%) !important;
     height: 100% !important;
+  }
+  body{
+    height: 120vh !important;
   }
 }
