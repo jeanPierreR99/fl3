@@ -142,6 +142,11 @@ function animationInit() {
     x: -700,
     ease: Circ.easeInOut
   })
+  TweenMax.from('.bi-caret-down-fill',2,{
+    delay: 6,
+    y: -700,
+    ease: Circ.easeInOut
+  })
 }
 
 var cursor = $('#mouse');
@@ -170,11 +175,11 @@ $(document).ready(() => {
   
 })
 
-// new fullpage("#fullpage", {
+new fullpage("#fullpage", {
 
-//   // Scrolling
-//   autoScrolling: true,
-//   css3: true,
+  // Scrolling
+  autoScrolling: true,
+  css3: true,
 
-// });
+});
 

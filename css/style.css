@@ -76,6 +76,61 @@ ul {
   width: 100%;
   height: 100%;
 }
+.gui{
+ position: absolute;
+ width: 100%;
+ z-index: 1;
+ bottom: 30px;
+ animation: 2s move linear infinite;
+ display: grid;
+ place-content: center;
+}
+.gui i{
+font-size: 40px;
+}
+.gui span{
+position: relative;
+color: rgb(255, 0, 200);
+display: grid;
+text-align: center;
+}
+.gui span:before{
+  display: none;
+  position: absolute;
+  content: "next page";
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Raiderfont';
+  width: 150px;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%);
+  border: 1px rgb(69, 69, 189) solid;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+  color: white;
+}
+.gui span:hover{
+  color: rgb(255, 0, 200);
+  color: white;
+}
+.gui span:hover::before{
+  display: block;
+}
+@keyframes move {
+  0% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+  
+}
 .img-wrapper {
   position: absolute;
   bottom: 10px;
@@ -124,7 +179,7 @@ z-index: 1;
   filter: contrast(2);
 }
 
-.ab{
+.section-container{
   width: 100%;
   height: 100vh;
   position: relative;
