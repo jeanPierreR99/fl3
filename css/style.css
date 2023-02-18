@@ -338,13 +338,12 @@ z-index: 1;
   position: fixed;
   bottom: 10px;
   right: 20px;
-  z-index: 999999;
+  z-index: 1000;
 }
 
 .bottomnav ul li {
   position: relative;
   margin-bottom: 30px;
- 
 }
 .bottomnav ul li a{
   text-decoration: none;
@@ -359,6 +358,29 @@ z-index: 1;
 .main-nav-hover{
   background: white !important;
   color: black !important;
+}
+.bottomnav li::before{
+  position: absolute;
+width: auto;
+height: auto;
+color: white;
+/* background: red; */
+}
+.bottomnav li:nth-child(1):hover::before{
+  content: "INICIO";
+  left: -50px;
+}
+.bottomnav li:nth-child(2):hover::before{
+  content: "SOBRE MI";
+  left: -70px;
+}
+.bottomnav li:nth-child(3):hover::before{
+  content: "PROYECTOS";
+  left: -90px;
+}
+.bottomnav li:nth-child(4):hover::before{
+  content: "EXPERIENCIA";
+  left: -90px;
 }
 /*  */
 
@@ -432,6 +454,7 @@ height: 300px;
   position: relative;
 } */
 
+/* page2 */
 .left2{
   position: relative;
   width: 40%;
@@ -471,6 +494,7 @@ gap: 20px;
 .nav ul{
 display: flex;
 justify-content:space-around;
+gap: 10px;
 }
 .nav ul li{
   padding: 10px;
@@ -479,13 +503,160 @@ justify-content:space-around;
   font-size: 18px;
 }
 .nav ul li:hover{
-box-shadow: 0px 0px 4px rgb(255, 0, 0);
-}
+  border-bottom: 2px red solid;}
 .about-hover{
   font-weight: 700;
-  box-shadow: 0px 0px 4px rgb(255, 0, 0);
-
+  border-bottom: 2px red solid;
 }
+.content-table{
+  width: 90%;
+  height: 50px;
+  background: rgb(0, 10, 37);
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  top: 20px;
+  border-radius: 6px;
+}
+.table-header{
+  margin: auto;
+  width: 90%;
+  height: 30px;
+  margin-top: 10px;
+  background: rgb(0, 1, 26);
+  border-radius: 10px;
+  position: relative;
+}
+.table-header span{
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.table-header span:nth-child(1){
+  background: red;
+  left: 10px;
+}
+.table-header span:nth-child(2){
+  background: rgb(255, 183, 0);
+  left: 40px;
+}
+.table-header span:nth-child(3){
+  background: rgb(26, 255, 0);
+  left: 70px;
+}
+
+/* page 3 */
+
+:root {
+  --surface-color: #021416;
+  --curve: 40;
+}
+
+.cards {
+  /* display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* gap: 2rem; */
+  /* margin: 4rem 5vw; */
+  /* padding: 0; */
+  /* list-style-type: none; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 350px;
+  width: 400px;
+  /* border-radius: calc(var(--curve) * 1px); */
+  overflow: hidden;
+  background: #049dae;
+}
+
+.card__image {
+  width: 100%;
+  height:130%;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* border-radius: calc(var(--curve) * 1px); */
+  /* border-top-left-radius: calc(var(--curve) * 1px); */
+  transform: translateY(100%);
+  background: var(--surface-color);
+  transition: .3s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0px);
+  height: 200px;
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .3s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 0.3em;
+  color: #d6fbc3;
+}
+
+.card__day {
+  font-size: 12px;
+  color: #619370;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #f1f8de;
+  font-family: "MockFlowFont";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+
 @media only screen and (max-width: 600px) {
   .left{
     height: 50%;
@@ -560,7 +731,7 @@ box-shadow: 0px 0px 4px rgb(255, 0, 0);
   .right2-content{
   margin: auto;
   height: 100%;
-margin-top: 10px;  
+margin-top: 60px;  
 }
   .right2 .right2-content .right2-body{
     padding: 0px;
@@ -579,8 +750,9 @@ margin-top: 10px;
 /* section2 */
 #section2{
   background: rgb(2, 0, 17);
+  position: relative;
 }
 #section3{
-  background: rgb(19, 3, 140);
+  background: #021416;
   color: wheat;
 }
