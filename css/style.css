@@ -17,6 +17,7 @@ center {
 }
 
 body {
+  cursor: none;
   font-family: 'Montserrat';
   font-size: 12px;
   width: 100%;
@@ -53,17 +54,27 @@ ul {
   height: 100%;
 }
 #mouse {
+  position: relative;
   z-index: 2000;
   position: fixed;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  /* background: rgb(255, 255, 255); */
   top: 0;
   left: 0;
   pointer-events: none;
-  /* transform: translate(-50%, -50%); */
   border: 1px rgb(255, 255, 255) solid;
+}
+#mouse::before{
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: rgb(255, 255, 255);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
 }
 
 .title-jean-hover {
@@ -72,25 +83,28 @@ ul {
   mix-blend-mode: difference;
   border: none !important;
 }
+.nav-hover{
+  /* background: rgb(255, 255, 255); */
+  /* border: none !important; */
+}
 .content{
   width: 100%;
   height: 100%;
+  display: flex;
 }
 .gui{
  position: absolute;
- width: 100%;
  z-index: 1;
+ left: 50%;
  bottom: 30px;
  animation: 2s move linear infinite;
- display: grid;
- place-content: center;
 }
 .gui i{
 font-size: 40px;
 }
 .gui span{
 position: relative;
-color: rgb(255, 0, 200);
+color: rgb(51, 38, 137);
 display: grid;
 text-align: center;
 }
@@ -111,7 +125,6 @@ text-align: center;
   color: white;
 }
 .gui span:hover{
-  color: rgb(255, 0, 200);
   color: white;
 }
 .gui span:hover::before{
@@ -138,7 +151,25 @@ text-align: center;
   height: 80%;
   z-index: 1;
 }
-
+.social{
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 10px;
+}
+.social li{
+  list-style: none;
+}
+.social a{
+  cursor: none;
+  color: rgba(222, 222, 222, 0.835);
+  font-size: 35px;
+}
+.social a:hover{
+  color: white;
+}
 .blur-image{
   position: absolute;
   bottom: 10px;
@@ -173,10 +204,11 @@ z-index: 1;
 .text h1 {
   font-size: 80px;
   font-family: 'Raiderfont';
-  background: linear-gradient(rgb(18, 4, 182), rgb(239, 0, 199));
+  background: linear-gradient(hsl(0, 0%, 100%), #0f0271);
   -webkit-background-clip: text;
   color: transparent;
-  filter: contrast(2);
+  filter: contrast(1.5);
+  /* text-shadow: 0px 5px 50px rgba(193, 11, 132, 0.571); */
 }
 
 .section-container{
@@ -303,17 +335,17 @@ z-index: 1;
 }
 
 .bottomnav {
-  position: absolute;
-  bottom: 50px;
+  position: fixed;
+  bottom: 10px;
   right: 100px;
-  z-index: 1;
+  z-index: 999999;
 }
 
 .bottomnav ul li {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 15px;
-  font-size: 13px;hidden
+  font-size: 13px;
   position: relative;
   margin-bottom: 30px;
 }
@@ -323,9 +355,8 @@ z-index: 1;
   height: 100%;
   width: 100%;
   padding: 15px 0 15px 0;
-  cursor: none;
 }
-.bottomnav ul li:hover:before{
+.bottomnav ul li a:hover:before{
   content: "";
   position: absolute;
   width: 40px;
@@ -406,6 +437,61 @@ height: 300px;
   background: orange;
   position: relative;
 } */
+
+.left2{
+  position: relative;
+  width: 40%;
+ height: 100%; 
+}
+.left2 .img-left2{
+  width: 100%;
+  height: 100%;
+}
+.left2 .img-left2 img{
+  width: 100%;
+  height: 100%;
+}
+.right2{
+  width: 60%;
+  color: rgb(159, 173, 180);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.right2 .right2-content{
+  height: auto;
+  width: 90%;
+  overflow: hidden;
+}
+.right2 .right2-content .right2-body{
+  padding: 10px 50px 10px 50px;
+}
+.right2 .about-text{
+font-size:17px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.nav{
+}
+.nav ul{
+display: flex;
+justify-content:space-around;
+}
+.nav ul li{
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+.nav ul li:hover{
+box-shadow: 0px 0px 4px rgb(255, 0, 0);
+}
+.about-hover{
+  font-weight: 700;
+  box-shadow: 0px 0px 4px rgb(255, 0, 0);
+
+}
 @media only screen and (max-width: 600px) {
   .left{
     height: 50%;
@@ -463,4 +549,42 @@ height: 300px;
     height: 100% !important;
   }
 
+  /* page2 */
+  .content{
+    flex-direction: column;
+  }
+  .left2{
+    width: 100%;
+    height: 40%;
+    order: 2;
+  }
+  .right2{
+    order: 1;
+    width: 100%;
+    height: 60%;
+  }
+  .right2-content{
+  margin: auto;
+  }
+  .right2 .right2-content .right2-body{
+    padding: 0px;
+  }
+  .right2 .about-text{
+    font-size: 13px;
+  }
+  .nav ul li{
+    font-size: 14px;
+  }
+  .social{
+    bottom: 10px;
+  }
+}
+
+/* section2 */
+#section2{
+  background: rgb(2, 0, 17);
+}
+#section3{
+  background: rgb(19, 3, 140);
+  color: wheat;
 }

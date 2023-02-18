@@ -1,13 +1,13 @@
-const cargarSonido = function (fuente) {
-  const sonido = document.createElement("audio");
-  sonido.src = fuente;
-  sonido.setAttribute("preload", "auto");
-  sonido.setAttribute("controls", "none");
-  sonido.style.display = "none"; // <-- oculto
-  document.body.appendChild(sonido);
-  return sonido;
-};
-const sonido = cargarSonido("./img/dino.mp3");
+// const cargarSonido = function (fuente) {
+//   const sonido = document.createElement("audio");
+//   sonido.src = fuente;
+//   sonido.setAttribute("preload", "auto");
+//   sonido.setAttribute("controls", "none");
+//   sonido.style.display = "none"; // <-- oculto
+//   document.body.appendChild(sonido);
+//   return sonido;
+// };
+// const sonido = cargarSonido("./img/dino.mp3");
 
 
 function animationDrop(){
@@ -78,8 +78,18 @@ function animationInit() {
     y: 1700,
     ease: Circ.easeInOut
   })
+  TweenMax.from('#bottomnav-nav4', 2, {
+    delay: 5,
+    y: 1700,
+    ease: Circ.easeInOut
+  })
   TweenMax.to('.main', 2, {
     delay: 3.5,
+    y: 1700,
+    ease: Circ.easeInOut
+  })
+  TweenMax.from('.social li', 2, {
+    delay: 8,
     y: 1700,
     ease: Circ.easeInOut
   })
@@ -151,11 +161,13 @@ function animationInit() {
 
 var cursor = $('#mouse');
 document.addEventListener('mousemove', function (e) {
-  cursor.css('left', e.clientX).css('top', e.clientY);
+  cursor.css('left', e.clientX-10).css('top', e.clientY-10);
 })
 
 $(document).ready(() => {
+  saltarA();
   animationInit()
+  
   $("#title-jean").hover(function () {
     $('#mouse').addClass('title-jean-hover')
   }, function () {
@@ -165,21 +177,83 @@ $(document).ready(() => {
   //jean
   $(".jean").hover(function () {
     $('#mouse').addClass('title-jean-hover')
-    sonido.play();
+    // sonido.play();
   }, function () {
     $('#mouse').removeClass('title-jean-hover')
-    sonido.pause();
+    // sonido.pause();
+  })
+  $(".hov").hover( function(){
+    $("#mouse").addClass('nav-hover')
+  }, function(){
+    $("#mouse").removeClass('nav-hover')
   })
 
-  //menu1
+  //menu2
+  $('.about-nav1').addClass('about-hover')
+  $('.right2-body').load('../about1.html')
   
 })
+function saltarA() {
+  navColor1();
+  var tiempo = 700;
+  $("html, body").animate({ scrollTop: $('#section1').offset().top}, tiempo);
+}
+function saltarB() {
+ navColor2();
+  var tiempo = 700;
+  $("html, body").animate({ scrollTop: $('#section2').offset().top }, tiempo);
+}
+function saltarC() {
+  navColor3();
+  var tiempo = 700;
+  $("html, body").animate({ scrollTop: $('#section3').offset().top }, tiempo);
+}
+function navColor1(){
+  $('.nav1').css('font-weight','900');
+  $('.nav2').css('font-weight','1');
+  $('.nav3').css('font-weight','1');
+}
+function navColor2(){
+  $('.nav2').css('font-weight','900');
+  $('.nav1').css('font-weight','1');
+  $('.nav3').css('font-weight','1');
+}
+function navColor3(){
+  $('.nav3').css('font-weight','900');
+  $('.nav1').css('font-weight','1');
+  $('.nav2').css('font-weight','1');
+}
 
-new fullpage("#fullpage", {
+//page 2
+$('.about-nav1').click(function(){
+  $('.right2-body').load('../about1.html')
+  $('.about-nav1').addClass('about-hover')
+  $('.about-nav2').removeClass('about-hover')
+  $('.about-nav3').removeClass('about-hover')
 
-  // Scrolling
-  autoScrolling: true,
-  css3: true,
 
-});
+})
+$('.about-nav2').click(function(){
+  $('.right2-body').load('../about2.html')
+  $('.about-nav2').addClass('about-hover')
+  $('.about-nav1').removeClass('about-hover')
+  $('.about-nav3').removeClass('about-hover')
+
+})
+$('.about-nav3').click(function(){
+  $('.right2-body').load('../about3.html')
+  $('.about-nav3').addClass('about-hover')
+  $('.about-nav2').removeClass('about-hover')
+  $('.about-nav1').removeClass('about-hover')
+
+})
+
+
+// new fullpage("#fullpage", {
+
+//   // Scrolling
+//   autoScrolling: true,
+//   css3: true,
+
+// });
 

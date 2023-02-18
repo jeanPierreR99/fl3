@@ -14,8 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
     integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- icon -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <!-- fullpage -->
   <link href="https://pagecdn.io/lib/fullpage/4.0.9/fullpage.min.css" rel="stylesheet" crossorigin="anonymous">
   <!--  -->
@@ -26,15 +26,22 @@
 
 <body>
   <script src="https://pagecdn.io/lib/fullpage/4.0.9/fullpage.min.js" crossorigin="anonymous"></script>
+  <div id="mouse"></div>
+  <div class="bottomnav">
+    <ul>
+      <li id="bottomnav-nav1"><a class="nav1 hov" onclick="saltarA()">home</a></li>
+      <li id="bottomnav-nav2"><a class="nav2 hov" onclick="saltarB()">about me</a></li>
+      <li id="bottomnav-nav3"><a class="nav3 hov" onclick="saltarC()">experiencies</a></li>
+      <li id="bottomnav-nav4"><a class="nav4 hov" onclick="saltarD()">proyects</a></li>
+    </ul>
+  </div>
 
-<div id="fullpage">
-  
-<div class="section">
-<div class="section-container">
+  <div class="section" id="section1" style="height: 100vh;">
+    <div class="section-container">
       <div class="main-content">
         <div class="main-content-left"></div>
         <div class="main-content-mid">
-         
+
           <div class="welcome-content-mid">
             <h1 class="main-welcome">WELCOME</h1>
             <img class="image-main" src="./img/portada2.png" alt="">
@@ -50,8 +57,6 @@
           <img class="menu-hover1" src="./img/portada2.png" alt="">
         </div>
 
-        <div id="mouse"></div>
-        
         <div class="left"></div>
         <div class="right">
           <img src="./img/layered-steps-haikei.png" alt="">
@@ -65,7 +70,7 @@
           </div>
 
           <div class="text">
-            <h1 id="title-jean">I'M JEAN PIERRE.</h1>
+            <h1 id="title-jean">I'M JEAN PIERRE</h1>
             <p>Full stack developer</p>
           </div>
           <div class="name1 color">FULL STACK</div>
@@ -78,22 +83,60 @@
           <div class="name8 color">SVELTE</div>
           <div class="name9 color">PHP</div>
 
-          <div class="bottomnav">
-            <ul>
-              <li id="bottomnav-nav1"><a href="#section1">profile</a></li>
-              <li id="bottomnav-nav2"><a href="#section2">portfolio</a></li>
-              <li id="bottomnav-nav3"><a href="#section3">contact</a></li>
-            </ul>
-          </div>
           <div class="gui" id="gui"><span><i class="bi bi-caret-down-fill"></i></span></div>
 
         </div>
       </div>
     </div>
   </div>
-<div class="section" id="section2" style="background: orangered;"><h2>section2</h2></div>
-<div class="section" id="section3" style="background: orange;"><h2>section3</h2></div>
-</div>
+  <div class="section" id="section2" style="height: 100vh">
+    <div class="section-container">
+    <div class="content">
+      <div class="left2">
+        <div class="img-left2">
+          <img src="./img/portada4.png" alt="">
+          <div class="social">
+            <li><a class="hov" href="google.com"><i class="bi bi-github"></i></a></li>
+            <li><a class="hov" href="google.com"><i class="bi bi-linkedin"></i></a></li>
+            <li><a class="hov" href="google.com"><i class="bi bi-facebook"></i></a></li>
+          </div>
+        </div>
+
+      </div>
+      <div class="right2">
+        <div class="right2-content">
+        <div class="right2-header">
+          <nav class="nav">
+            <ul>
+              <li class="about-nav1">YO</li>
+              <li class="about-nav2">MIS HABILIDADES</li>
+              <li class="about-nav3">MIS TECNOLOGIAS</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="right2-body">
+          <!-- <div class="about-text">
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis eius quam eos veniam molestiae
+              magnam aspernatur nisi quisquam delectus quaerat. Quod quibusdam, explicabo aspernatur odio error
+              voluptatibus doloribus eaque animi.</span>
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis eius quam eos veniam molestiae
+              magnam aspernatur nisi quisquam delectus quaerat. Quod quibusdam, explicabo aspernatur odio error
+              voluptatibus doloribus eaque animi.</span>
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis eius quam eos veniam molestiae
+              magnam aspernatur nisi quisquam delectus quaerat. Quod quibusdam, explicabo aspernatur odio error
+              voluptatibus doloribus eaque animi.</span>
+          </div> -->
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="section" id="section3" style="height: 100vh">
+    <div class="section-container">
+    <h2>section3</h2>
+  </div>
+  </div>
   <script src="./js/index.js"></script>
 </body>
 
