@@ -209,19 +209,19 @@ function saltarC() {
   $("html, body").animate({ scrollTop: $('#section3').offset().top }, tiempo);
 }
 function navColor1(){
-  $('.nav1').css('font-weight','900');
-  $('.nav2').css('font-weight','1');
-  $('.nav3').css('font-weight','1');
+  $('.nav1').addClass('main-nav-hover')
+  $('.nav2').removeClass('main-nav-hover')
+  $('.nav3').removeClass('main-nav-hover')
 }
 function navColor2(){
-  $('.nav2').css('font-weight','900');
-  $('.nav1').css('font-weight','1');
-  $('.nav3').css('font-weight','1');
+  $('.nav2').addClass('main-nav-hover')
+  $('.nav1').removeClass('main-nav-hover')
+  $('.nav3').removeClass('main-nav-hover')
 }
 function navColor3(){
-  $('.nav3').css('font-weight','900');
-  $('.nav1').css('font-weight','1');
-  $('.nav2').css('font-weight','1');
+  $('.nav3').addClass('main-nav-hover')
+  $('.nav2').removeClass('main-nav-hover')
+  $('.nav1').removeClass('main-nav-hover')
 }
 
 //page 2
